@@ -12,7 +12,7 @@ function ShowTeam() {
     const fetchData = async () => {
       try {
         // Send the request with the configured headers
-        const response = await axios.get(`https://heliverse-mg68.onrender.com/api/team/teambyid/${teamid}`);
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/team/teambyid/${teamid}`);
         // setData(response.data.data)
         console.log(response.data);
         setTeam(response.data.data)

@@ -14,7 +14,7 @@ function AddTeam() {
     const [teamUser, setteamUser] = useState([])
     const SearchById = async () => {
         try {
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/userbyid/${id}`);
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/userbyid/${id}`);
             // dispatch(ChangeData(response.data.data))
             console.log(response.data.data[0]);
             const obj = response.data.data[0];
@@ -53,7 +53,7 @@ function AddTeam() {
             } else {
                 // console.log(firstname, lastname, email, gender, email, available, domain);
                 // console.log();
-                const response = await axios.post(`https://heliverse-mg68.onrender.com/api/team/addteam`, { id: teamid, team_name: teamname, team_member: teamUser });
+                const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/team/addteam`, { id: teamid, team_name: teamname, team_member: teamUser });
                 console.log(response);
                 if (response.status == 200) {
                     alert(`Submit Successfully`)

@@ -17,7 +17,7 @@ function AllTeams() {
         const fetchData = async () => {
             try {
                 // Send the request with the configured headers
-                const response = await axios.get(`https://heliverse-mg68.onrender.com/api/team/getallteam`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/team/getallteam`);
                 setData(response.data.data)
                 console.log(response.data.data);
                 // if (response.data.data[0].id == 1) {

@@ -25,7 +25,7 @@ function UpdateUser() {
             } else {
                 console.log(firstname, lastname, email, gender, email, available, domain);
                 // console.log();
-                const response = await axios.put(`https://heliverse-mg68.onrender.com/api/dashboard/updateuser/${id}`, { first_name:firstname, last_name:lastname, email, gender, available, avatar, domain });
+                const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/api/dashboard/updateuser/${id}`, { first_name:firstname, last_name:lastname, email, gender, available, avatar, domain });
                 console.log(response);
                 if (response.status == 200) {
                     alert(`Submit Successfully`)

@@ -23,7 +23,7 @@ function AddUser() {
             } else {
                 console.log(firstname, lastname, email, gender, email, available, domain);
                 // console.log();
-                const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/adduser`, { first_name: firstname, last_name: lastname, email, gender, available, avatar, domain });
+                const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/adduser`, { first_name: firstname, last_name: lastname, email, gender, available, avatar, domain });
                 console.log(response);
                 if (response.status == 200) {
                     alert(`Submit Successfully`)

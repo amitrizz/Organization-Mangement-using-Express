@@ -13,7 +13,7 @@ function FilterBoard() {
 
     const SearchByName = async (name) => {
         try {
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/getuser`, { name: name });
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/getuser`, { name: name });
             dispatch(ChangeData(response.data.data))
 
         } catch (error) {

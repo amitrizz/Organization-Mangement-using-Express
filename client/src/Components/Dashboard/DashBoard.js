@@ -21,7 +21,7 @@ function DashBoard() {
         try {
             // console.log(skip);
             setFileContent(false);
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/loaddata`, { skip: skip + 1 });
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/loaddata`, { skip: skip + 1 });
             setSkip(skip + 1);
             dispatch(ChangeData(response.data.data))
             dispatch(PreviousButtonState(false));
@@ -34,10 +34,10 @@ function DashBoard() {
         try {
             // console.log(skip);
             setFileContent(false);
-            let response = await axios.delete(`https://heliverse-mg68.onrender.com/api/dashboard/deleteuser/${id}`);
+            let response = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/dashboard/deleteuser/${id}`);
             console.log(response.data);
             alert(response.data.result)
-            response = await axios.get(`https://heliverse-mg68.onrender.com/api/dashboard/loaddata`);
+            response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/dashboard/loaddata`);
             dispatch(ChangeData(response.data.data))
             if (response.data.data[0].id == 1) {
                 dispatch(PreviousButtonState(true));
@@ -53,7 +53,7 @@ function DashBoard() {
         try {
             // console.log(skip);
             setFileContent(false);
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/loaddata`, { skip: skip - 1 });
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/loaddata`, { skip: skip - 1 });
             setSkip(skip - 1);
             dispatch(ChangeData(response.data.data))
             if (response.data.data[0].id == 1) {
@@ -74,7 +74,8 @@ function DashBoard() {
         const fetchData = async () => {
             try {
                 // Send the request with the configured headers
-                const response = await axios.get(`https://heliverse-mg68.onrender.com/api/dashboard/loaddata`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/dashboard/loaddata`);
+                console.log(response.data.data);
                 dispatch(ChangeData(response.data.data))
                 console.log(response.data.data[0].avatar);
                 if (response.data.data[0].id == 1) {
@@ -104,6 +105,7 @@ function DashBoard() {
                                             <div>
                                                 <h5 class="card-title">Name : {obj.first_name} {obj.last_name}</h5>
                                                 <h5 class="card-title">Email: {obj.email}</h5>
+                                                <h5 class="card-title">User id: {obj.id}</h5>
                                                 <h5 class="card-title">Gender: {obj.gender}</h5>
                                                 <h5 class="card-title">Domain: {obj.domain}</h5>
                                             </div>

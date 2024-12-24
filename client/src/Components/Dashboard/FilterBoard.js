@@ -23,7 +23,7 @@ function FilterBoard() {
 
     const SearchById = async () => {
         try {
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/userbyid/${id}`);
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/userbyid/${id}`);
             dispatch(ChangeData(response.data.data))
 
         } catch (error) {
@@ -35,7 +35,7 @@ function FilterBoard() {
         const fetchData = async () => {
             try {
                 // Send the request with the configured headers
-                const response = await axios.get(`https://heliverse-mg68.onrender.com/api/dashboard/loaddata`);
+                const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/dashboard/loaddata`);
                 dispatch(ChangeData(response.data.data))
                 if (response.data.data[0].id == 1) {
                     dispatch(PreviousButtonState(true));
@@ -54,7 +54,7 @@ function FilterBoard() {
         // console.log('Selected department:', department);
         // setLoad(false);
         try {
-            const response = await axios.post(`https://heliverse-mg68.onrender.com/api/dashboard/filter`, { fieldtype: fieldtype });
+            const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/dashboard/filter`, { fieldtype: fieldtype });
             dispatch(ChangeData(response.data.data))
 
         } catch (error) {
@@ -99,6 +99,7 @@ function FilterBoard() {
                                             <div>
                                                 <h5 class="card-title">Name : {obj.first_name} {obj.last_name}</h5>
                                                 <h5 class="card-title">Email: {obj.email}</h5>
+                                                <h5 class="card-title">User Id: {obj.id}</h5>
                                                 <h5 class="card-title">Gender: {obj.gender}</h5>
                                                 <h5 class="card-title">Domain: {obj.domain}</h5>
                                             </div>

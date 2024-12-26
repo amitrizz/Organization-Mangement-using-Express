@@ -31,33 +31,26 @@ body::-webkit-scrollbar {
 
 
 
-.navbarbody {
-    flex-basis: 25%;
-    /* width: 100%; */
-    /* padding-top: 80px; */
-    display: flex;
-    /* justify-content: center; */
-    height: 100vh;
-}
+.navbarbody {}
 
 .navbody {
-    /* background: #e46e6e; */
-    width: 90%;
-    /* box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);; */
-
     display: flex;
-    justify-content: center;
-    background: #8c8d8d33;
-    /* padding: 10px; */
-    position: relative;
-    /* padding-right: 10px; */
+    justify-content: space-between;
+    padding: 5px 30px;
+    align-items: center;
+}
+
+.logoimg img {
+    height: 50px;
+    border-radius: 50%;
 }
 
 .header {
     background: #8c8d8d33;
-    padding: 15px;
+    padding: 30px;
     text-align: center;
-    font-size: 25px;
+    line-height: 32px;
+    font-size: 30px;
     font-weight: 600;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -65,9 +58,9 @@ body::-webkit-scrollbar {
 
 .nav-link {
     /* text-decoration: none; */
-    margin-top: 50px;
+    display: flex;
     list-style: none;
-
+    margin-bottom: 0px;
 }
 
 .link {
@@ -85,7 +78,7 @@ body::-webkit-scrollbar {
 
 }
 
-.filterbody{
+.filterbody {
     /* background: #ffb7b7; */
     width: 50%;
     display: flex;
@@ -93,15 +86,16 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 10px;
 }
-.filterbody div{
+
+.filterbody div {
     width: 100%;
     /* display: flex; */
     /* margin: 10px; */
-    
+
 }
 
 /* Showteam Css */
-.showteam{
+.showteam {
     /* background: #f37676; */
     width: 100%;
     display: flex;
@@ -109,37 +103,42 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
 }
-.showteambody{
+
+.showteambody {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
-.showteamcard{
+
+.showteamcard {
     width: 30%;
 }
 
 
 /* All Team Css */
 
-.allteambody{
+.allteambody {
     width: 100%;
     /* display: flex; */
     /* align-items: center; */
     /* justify-content: center; */
     text-align: center;
 }
-.allteamcard{
+
+.allteamcard {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.allteamcard li{
+
+.allteamcard li {
     list-style: none;
     margin-left: 10px;
     margin-right: 10px;
 }
-.allteambody button{
+
+.allteambody button {
     background: none;
     /* border: none; */
     cursor: pointer;
@@ -147,34 +146,300 @@ body::-webkit-scrollbar {
     padding: 5px;
     border-color: rgba(137, 43, 226, 0.233);
 }
-table{
+
+table {
     margin-top: 10px;
     /* background: #0b8070; */
     width: 80%;
     text-align: center;
     /* margin-right: 10px; */
 }
-table thead{
+
+table thead {
     background: #afafaf;
 }
-table tbody{
+
+table tbody {
     background: #7e7e7e1f;
 }
-.allteambody table th{
+
+.allteambody table th {
     margin: 250px 0px;
 }
-.allteambody table tr{
+
+.allteambody table tr {
     margin-top: 20px;
 }
 
 
 /* addteam Css */
-.addteambody{
+.addteambody {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
+}
+
+
+/* Add Employee Container */
+.add-employee-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+/* Sidebar */
+.add-employee-sidebar {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.add-employee-sidebar h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.add-employee-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fefefe;
+    transition: all 0.3s;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.form-button:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .add-employee-container {
+        padding: 10px;
+    }
+
+    .add-employee-sidebar {
+        width: 100%;
+    }
+
+    .form-label,
+    .form-input,
+    .form-select,
+    .form-button {
+        font-size: 14px;
+    }
+}
+
+
+/* team */
+/* Create Team Container */
+.create-team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+}
+
+/* Header */
+.create-team-header h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Card Style */
+.create-team-card {
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-team-card .form-group {
+    margin-bottom: 15px;
+}
+
+/* Form Elements */
+.form-label {
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+.form-input-inline {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-button-inline {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-button-inline:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Team Member List */
+.team-member-list {
+    margin-top: 20px;
+}
+
+.team-member-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.team-member-id,
+.team-member-domain {
+    font-size: 14px;
+    color: #333;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .create-team-card {
+        width: 90%;
+    }
+
+    .form-button-inline {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
 }
 
 
@@ -279,7 +544,8 @@ table tbody{
         flex-direction: column;
 
     }
-    .filterbody div{
+
+    .filterbody div {
         width: 100%;
         display: flex;
         /* justify-content: space-around; */
@@ -287,19 +553,22 @@ table tbody{
         margin: 5px;
         /* background: #f5abab; */
     }
-    .searchinput{
+
+    .searchinput {
         /* display: flex;
         justify-content: center;
         align-items: center; */
     }
-    .searchinput input{
+
+    .searchinput input {
         width: 95%;
         border-color: none;
         padding: 5px;
         border-radius: 3px;
         /* margin-right: 20px; */
     }
-    .Dashbody{
+
+    .Dashbody {
         width: 80%;
     }
 

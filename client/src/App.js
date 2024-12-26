@@ -20,9 +20,8 @@ function App() {
       <BrowserRouter>
         {/* <Header /> */}
         <div className='body'>
-          <Header />
+          <Navbar className='navbar' />
           <div className='app'>
-            <Navbar className='navbar' />
             <Routes>
               <Route path="/" element={<DashBoard />} ></Route>
               <Route path="/filter" element={<FilterBoard />} />

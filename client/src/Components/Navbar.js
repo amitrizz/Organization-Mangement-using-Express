@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logoimg  from '..'
 
 
 function Navbar() {
     return (
         <div className='navbarbody'>
             <nav className='navbody'>
+                <div className='logoimg'><img src='logo.jpg'/></div>
                 <ul className="nav-link">
                     <li className="link">
                         <Link to="/" className={"link-styles"}>DashBoard</Link>

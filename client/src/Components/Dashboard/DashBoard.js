@@ -4,6 +4,9 @@ import './DashBoard.css'
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { ChangeData, PreviousButtonState, SetUserIdForUpdate } from '../../features/dashbaordSlice'
+import Navbar from '../Navbar'
+import Header from '../Header'
+
 
 function DashBoard() {
 
@@ -92,37 +95,43 @@ function DashBoard() {
     return (
         <div className='DashBoard'>
             <div className='Dashbody'>
+                <Header />
                 {fileContent ?
-                    <div className='dashcontent'>
-                        <button onClick={RemoveMoreDataToTable} disabled={isbuttonDisble}>Pre PAge</button>
-                        <button onClick={AddMoreDataToTable}>Next PAge</button>
-                        {
-                            data.map((obj) => {
-                                return (
-                                    <div class="card" style={{ "margin": "10px" }}>
-                                        <img src={obj.avatar} width={"50px"} height={"50px"} alt="..." />
-                                        <div class="card-body">
-                                            <div>
-                                                <h5 class="card-title">Name : {obj.first_name} {obj.last_name}</h5>
-                                                <h5 class="card-title">Email: {obj.email}</h5>
-                                                <h5 class="card-title">User id: {obj.id}</h5>
-                                                <h5 class="card-title">Gender: {obj.gender}</h5>
-                                                <h5 class="card-title">Domain: {obj.domain}</h5>
-                                            </div>
-                                            <div>
+                    <div className='dashcontent container'>
+                        <button className='dbtn' onClick={RemoveMoreDataToTable} disabled={isbuttonDisble}>Pre Page</button>
+                        <button className='dbtn' onClick={AddMoreDataToTable}>Next Page</button>
+                        <div className='row'>
 
-                                                <button onClick={() => DeleteUserbyId(obj._id)} class="btn btn-primary">Delete User</button>
-                                                <button style={{ "marginLeft": "10px" }} onClick={() => RedirectToUpdate(obj._id)} class="btn btn-primary">Update User</button>
+                            {
+                                data.map((obj) => {
+                                    return (
+                                        <div className='col-6'>
+                                            <div class="card" style={{ "margin": "5px" }}>
+                                                <img src={obj.avatar} width={"50px"} height={"50px"} alt="..." />
+                                                <div class="card-body">
+                                                    <div>
+                                                        <h5 class="card-title">Name : {obj.first_name} {obj.last_name}</h5>
+                                                        <h5 class="card-title">Email: {obj.email}</h5>
+                                                        <h5 class="card-title">User id: {obj.id}</h5>
+                                                        <h5 class="card-title">Gender: {obj.gender}</h5>
+                                                        <h5 class="card-title">Domain: {obj.domain}</h5>
+                                                    </div>
+                                                    <div>
+
+                                                        <button onClick={() => DeleteUserbyId(obj._id)} class="premium-btn">Delete User</button>
+                                                        <button style={{ "marginLeft": "10px" }} onClick={() => RedirectToUpdate(obj._id)} class="premium-btn">Update User</button>
+                                                    </div>
+                                                </div>
+                                                {/* <li key={obj.id}> {obj.id} </li> */}
                                             </div>
                                         </div>
-                                        {/* <li key={obj.id}> {obj.id} </li> */}
-                                    </div>
-                                )
-                            })
-                        }
+                                    )
+                                })
+                            }
 
+                        </div>
                     </div>
-                    : <div className='dashloading'>Loading..</div>}
+                    : <div className='dashloading'><div className="spinner"></div></div>}
             </div>
         </div>
     )

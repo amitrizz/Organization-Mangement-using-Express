@@ -68,44 +68,59 @@ function AddTeam() {
         }
     }
     return (
-        <div className='DashBoard'>
-            <div className='addteambody'>
-                <div><h1>Create Team</h1></div>
-
-                <div className='card' style={{ padding: "20px", width: "50%" }}>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" className="lable">Team Name</label>
-                        <input type="text" class="form-control" onChange={e => setteamname(e.target.value)} maxLength={30} />
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" className="lable">Team Id</label>
-                        <input type="text" class="form-control" onChange={e => setteamid(e.target.value)} maxLength={30} />
-                    </div>
-                    <div class="input-group mb-1">
-                        <input placeholder='enter userId ...' onChange={(e) => setid(e.target.value)} />
-                        <button onClick={SearchById} class="btn btn-outline-secondary">Add User</button>
-                    </div>
-                    <div>
-                        <button onClick={handleSubmitData} class="btn btn-outline-secondary">Submit</button>
-                    </div>
-                    <div>
-                        <label for="exampleInputEmail1" className="lable">Team Member List With Doamin</label>
-                        {
-                            teamUser.map((obj) => {
-                                return (
-                                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "10px", width: "100%" }}>
-                                        <span> {obj.id} </span>
-                                        <span> {obj.domain} </span>
-                                        <button onClick={() => DeleteUserFromTeam(obj.id)}>Delete User</button>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
+        <div className="create-team-container">
+            <div className="create-team-header">
+                <h1>Create Team</h1>
             </div>
 
+            <div className="create-team-card">
+                <div className="form-group">
+                    <label htmlFor="teamName" className="form-label">Team Name</label>
+                    <input
+                        type="text"
+                        id="teamName"
+                        className="form-input"
+                        onChange={(e) => setteamname(e.target.value)}
+                        maxLength={30}
+                    />
+                </div>
+
+                <div className="form-group">
+                    <label htmlFor="teamId" className="form-label">Team ID</label>
+                    <input
+                        type="text"
+                        id="teamId"
+                        className="form-input"
+                        onChange={(e) => setteamid(e.target.value)}
+                        maxLength={30}
+                    />
+                </div>
+
+                <div className="form-group form-inline">
+                    <input
+                        type="text"
+                        placeholder="Enter User ID..."
+                        className="form-input-inline"
+                        onChange={(e) => setid(e.target.value)}
+                    />
+                    <button onClick={SearchById} className="form-button-inline">Add User</button>
+                </div>
+
+                <button onClick={handleSubmitData} className="form-button">Submit</button>
+
+                <div className="team-member-list">
+                    <label htmlFor="teamMembers" className="form-label">Team Member List with Domain</label>
+                    {teamUser.map((obj) => (
+                        <div key={obj.id} className="team-member-item">
+                            <span className="team-member-id">{obj.id}</span>
+                            <span className="team-member-domain">{obj.domain}</span>
+                            <button onClick={() => DeleteUserFromTeam(obj.id)} className="delete-button">Delete User</button>
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
+
     )
 }
 

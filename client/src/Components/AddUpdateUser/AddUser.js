@@ -48,54 +48,90 @@ function AddUser() {
     }
 
     return (
-        <div className='DashBoard'>
-            <div className='User'>
-                <div className='sidebar'>
-                    <h1>ADD EMPLOYEE</h1>
-                    <div className='form'>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" className="lable">First Name</label>
-                            <input type="text" class="form-control" onChange={e => setfirstName(e.target.value)} maxLength={30} />
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" className="lable">Last Name</label>
-                            <input type="text" class="form-control" onChange={e => setLastName(e.target.value)} maxLength={30} />
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" className="lable">Email</label>
-                            <input type="email" class="form-control" onChange={e => setEmail(e.target.value)} maxLength={30} />
-                        </div>
-                        <select value={gender} onChange={handleGenderChange} className='selectStyle' >
-                            <option value="">Select an Gender</option>
+        <div className="add-employee-container card">
+            <div className="add-employee-sidebar">
+                <h1>Add Employee</h1>
+                <div className="add-employee-form">
+                    <div className="form-group">
+                        <label htmlFor="firstName" className="form-label">First Name</label>
+                        <input
+                            type="text"
+                            className="form-input"
+                            id="firstName"
+                            onChange={(e) => setfirstName(e.target.value)}
+                            maxLength={30}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="lastName" className="form-label">Last Name</label>
+                        <input
+                            type="text"
+                            className="form-input"
+                            id="lastName"
+                            onChange={(e) => setLastName(e.target.value)}
+                            maxLength={30}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input
+                            type="email"
+                            className="form-input"
+                            id="email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            maxLength={30}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="gender" className="form-label">Gender</label>
+                        <select
+                            value={gender}
+                            id="gender"
+                            onChange={handleGenderChange}
+                            className="form-select"
+                        >
+                            <option value="">Select Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
-
-                        <select value={available} onChange={handleAvailableChange} className='selectStyle' >
-                            <option value="">Select an Available</option>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="availability" className="form-label">Availability</label>
+                        <select
+                            value={available}
+                            id="availability"
+                            onChange={handleAvailableChange}
+                            className="form-select"
+                        >
+                            <option value="">Select Availability</option>
                             <option value="true">Yes</option>
                             <option value="false">No</option>
                         </select>
-
-                        <select value={domain} onChange={handleDomainChange} className='selectStyle' >
-                            <option value="">Select an Domain</option>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="domain" className="form-label">Domain</label>
+                        <select
+                            value={domain}
+                            id="domain"
+                            onChange={handleDomainChange}
+                            className="form-select"
+                        >
+                            <option value="">Select Domain</option>
                             <option value="Marketing">Marketing</option>
                             <option value="Finance">Finance</option>
                             <option value="Accounts">Accounts</option>
-                            <option value="It">It</option>
+                            <option value="IT">IT</option>
                             <option value="Software">Software</option>
                             <option value="Sales">Sales</option>
-
                         </select>
-
-
-
-                        <button onClick={HandleSubmit} class="btn btn-outline-secondary">Submit</button>
                     </div>
+                    <button onClick={HandleSubmit} className="form-button">
+                        Submit
+                    </button>
                 </div>
             </div>
         </div>
+
     )
 }
 

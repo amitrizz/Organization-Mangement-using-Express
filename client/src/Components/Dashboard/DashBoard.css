@@ -117,4 +117,11 @@
       transform: rotate(360deg);
     }
   }
+
+  .nextprebtn{
+    display: flex
+    ;
+        justify-content: space-between;
+        padding: 5px;
+  }
   

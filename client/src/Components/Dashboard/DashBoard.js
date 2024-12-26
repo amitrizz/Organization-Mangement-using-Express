@@ -98,8 +98,10 @@ function DashBoard() {
                 <Header />
                 {fileContent ?
                     <div className='dashcontent container'>
+                        <div className='nextprebtn'>
                         <button className='dbtn' onClick={RemoveMoreDataToTable} disabled={isbuttonDisble}>Pre Page</button>
                         <button className='dbtn' onClick={AddMoreDataToTable}>Next Page</button>
+                        </div>
                         <div className='row'>
 
                             {

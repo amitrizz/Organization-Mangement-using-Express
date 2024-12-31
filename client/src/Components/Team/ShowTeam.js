@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
+import './ShowTeam.css'
 
 function ShowTeam() {
   const teamid = useSelector(state => state.teamid)
@@ -17,11 +18,6 @@ function ShowTeam() {
         console.log(response.data);
         setTeam(response.data.data)
         setUserlist(response.data.userList)
-        // if (response.data.data[0].id == 1) {
-        //     dispatch(PreviousButtonState(true));
-        // }
-        // setFileContent(true);
-        //   setAllemployee(response)
       } catch (error) {
         console.error('Error fetching data:', error);
       }

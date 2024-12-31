@@ -94,14 +94,13 @@ function DashBoard() {
     }, []);
     return (
         <div className='DashBoard'>
+
+            <button className='ldbtn' onClick={RemoveMoreDataToTable} disabled={isbuttonDisble}>Pre Page</button>
             <div className='Dashbody'>
+
                 <Header />
                 {fileContent ?
                     <div className='dashcontent container'>
-                        <div className='nextprebtn'>
-                        <button className='dbtn' onClick={RemoveMoreDataToTable} disabled={isbuttonDisble}>Pre Page</button>
-                        <button className='dbtn' onClick={AddMoreDataToTable}>Next Page</button>
-                        </div>
                         <div className='row'>
 
                             {
@@ -133,8 +132,10 @@ function DashBoard() {
 
                         </div>
                     </div>
-                    : <div className='dashloading'><div className="spinner"></div></div>}
+                    : <div className='dashloading'><div className="spinner"></div></div>
+                }
             </div>
+            <button className='rdbtn' onClick={AddMoreDataToTable}>Next Page</button>
         </div>
     )
 }

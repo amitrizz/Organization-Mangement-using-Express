@@ -3,6 +3,7 @@ import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { SetTeamId } from '../../features/dashbaordSlice'
 import { useNavigate } from "react-router-dom"
+import './AllTeams.css'
 
 function AllTeams() {
 

@@ -1,0 +1,37 @@
+.showteam {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.showteamtitle {
+    margin-bottom: 20px;
+}
+
+.showteamtitle h3 {
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.showteamtitle h5 {
+    font-size: 1.2rem;
+    color: #007bff;
+    font-weight: normal;
+}
+
+.showteambody {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* Space between the cards */
+}
+
+.showteamcard {
+    flex: 1 1 200px;
+    /* Flex property to allow responsive layout */
+    display: flex;
+    justify-content: center;
+}
